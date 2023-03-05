@@ -1,5 +1,5 @@
 {
-  "name": "different-projects",
+  "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://IvanMutsko.github.io/different-projects",
@@ -15,7 +15,7 @@
   "author": "Ivan Mutsko",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IvanMutsko/different-projects/issues"
+    "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "dependencies": {
     "flatpickr": "^4.6.13",
