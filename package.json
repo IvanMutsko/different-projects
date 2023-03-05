@@ -1,21 +1,21 @@
 {
-  "name": "parcel-project-template",
+  "name": "different-projects",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://IvanMutsko.github.io/goit-js-hw-10",
+  "homepage": "https://IvanMutsko.github.io/different-projects",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
+    "build": "parcel build src/*.html --public-url /different-projects/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/parcel-project-template.git"
+    "url": "git+https://github.com/IvanMutsko/different-projects.git"
   },
   "keywords": [],
   "author": "Ivan Mutsko",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/IvanMutsko/different-projects/issues"
   },
   "dependencies": {
     "flatpickr": "^4.6.13",
