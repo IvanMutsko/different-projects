@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="./css/clock.css" />
+  </head>
+  <body>
+    <a href="../index.html" class="link-on-main">Main page</a>
+
+    <div class="clock">
+      <div id="time-box">
+        <div id="hours">00</div>
+        <div id="dots">:</div>
+        <div id="minutes">00</div>
+        <div id="dots">:</div>
+        <div id="seconds">00</div>
+        <div id="ampm">00</div>
+      </div>
+      <div class="lines-box" id="time-lines-box">
+        <p class="time-text">Hour</p>
+        <div class="time-line" id="hour-line">
+          <div class="time-slider" id="slide-hour"></div>
+        </div>
+        <p class="time-text">Minutes</p>
+        <div class="time-line" id="minutes-line">
+          <div class="time-slider" id="slide-min"></div>
+        </div>
+        <p class="time-text">Seconds</p>
+        <div class="time-line" id="second-line">
+          <div class="time-slider" id="slide-sec"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/clock.js" type="module"></script>
+  </body>
+</html>

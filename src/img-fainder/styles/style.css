@@ -1,0 +1,143 @@
+:root {
+  --accent-color: #0d698b;
+  --background-color: #f2f1e8;
+  --dark-color: #050533;
+  --element-color: #e34234;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+
+  background-color: var(--background-color);
+  color: var(--accent-color);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.search-form {
+  display: flex;
+  background-color: var(--dark-color);
+  height: 70px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
+
+  box-shadow: 0px 8px 14px -2px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 8px 14px -2px rgba(0, 0, 0, 0.67);
+}
+
+.search-form input {
+  width: 250px;
+  height: 40px;
+  padding: 15px;
+  margin-right: 20px;
+
+  border-radius: 10px;
+}
+
+button {
+  min-width: 80px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid var(--accent-color);
+
+  background-color: var(--element-color);
+  font-weight: 700;
+}
+
+button:hover {
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  border: 3px solid var(--element-color);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+
+.photo-link {
+  display: inline-flex;
+  max-width: 320;
+  color: inherit;
+  text-decoration: none;
+}
+
+.photo-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  width: 100%;
+  border: 2px solid var(--dark-color);
+  border-radius: 10px;
+  box-shadow: 0px 8px 14px -2px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 8px 14px -2px rgba(0, 0, 0, 0.67);
+}
+
+.photo-card img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.info {
+  display: grid;
+  column-gap: 40px;
+  row-gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.likes {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.views {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.comments {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.downloads {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.wrap button {
+  width: 150px;
+  box-shadow: 0px 8px 14px -7px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 8px 14px -7px rgba(0, 0, 0, 0.67);
+}

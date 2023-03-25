@@ -1,0 +1,63 @@
+/* --------clock--------- */
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#time-box {
+  display: inline-flex;
+  justify-content: center;
+
+  width: 300px;
+
+  gap: 20px;
+  font-size: 40px;
+  color: rgb(24, 60, 82);
+  background-color: #c4c4c4;
+
+  font-weight: 700;
+
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#ampm {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.lines-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-text {
+  font-family: arial;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(0, 44, 71);
+  margin-top: 10px;
+}
+
+.time-line {
+  position: relative;
+  overflow: hidden;
+  width: 280px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.308);
+}
+
+.time-slider {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(217, 255, 0);
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  border-radius: 50%;
+  transition-duration: 1000ms;
+}
