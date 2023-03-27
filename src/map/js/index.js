@@ -1,3 +1,4 @@
+import 'normalize.css';
 import { fetchWeather } from './fetchweather';
 
 const mapEl = document.querySelectorAll('#map path');
@@ -6,11 +7,12 @@ const weatherBlockEl = document.querySelector('#weather-block');
 
 mapEl.forEach(state => {
   state.style.fill = '#ffd700';
-  state.style.stroke = '#499DF5';
+  state.style.fillOpacity = '0.3';
+  state.style.stroke = 'rgba(0, 0, 0, 0.3)';
   state.style.strokeWidth = '1px';
 
   state.addEventListener('mouseenter', evt => {
-    state.style.fill = '#f7f760';
+    state.style.fill = '#0057b8';
 
     const stateNameText = state.getAttribute('title');
     stateNameEl.textContent = `, ${stateNameText}`;
@@ -40,10 +42,10 @@ mapEl.forEach(state => {
         clouds: clouds.all, //
         sunrise: formatUnixTime(sys.sunrise), //
         sunset: formatUnixTime(sys.sunset), //
-        description: weather[0].description,
+        description: weather[0].description, //
         icon: weather[0].icon,
         main: weather[0].main,
-        id: weather[0].id,
+        id: weather[0].id, //
       };
 
       weatherBlockEl.textContent = '';
@@ -55,15 +57,35 @@ mapEl.forEach(state => {
 
 function createMarkupWeather(data) {
   const markup = `
-  <p>Температура: ${data.temp} °C</p>
-  <p>відчувається як: ${data.feelsLike} °C</p>
-  <p>Тиск: ${data.pressure} мм рт. ст.</p>
-  <p>Вологість: ${data.humidity} %</p>
-  <p>Вітер: ${data.windSpeed} м/с</p>
-  <p>Вітер, пориви до: ${data.windGust} м/с</p>
-  <p>Хмарність: ${data.clouds} %</p>
-    <p>Схід: ${data.sunrise}</p>
-      <p>Захід: ${data.sunset}</p>
+  <div class="weather-description">
+          <h2 class="descr-title">Description: ${data.description}</h2>
+          <img
+            class="weather-img"
+            src="https://openweathermap.org/img/wn/${data.icon}@2x.png"
+          />
+          <ul class="time-wrap weather-list">
+            <li>
+              Curent time: 00:00
+              <ul class="time-list">
+                <li>sunrise: ${data.sunrise}</li>
+                <li>sunset: ${data.sunset}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="wether-data-wrap">
+          <ul class="weather-list">
+            <li>Temperature: ${data.temp} °C</li>
+            <li>Feels like: ${data.feelsLike} °C</li>
+            <li>Wind: ${data.windSpeed} m/s</li>
+            <li>Wind gust: ${data.windGust} m/s</li>
+          </ul>
+          <ul class="weather-list">
+            <li>Pressure: ${data.pressure} mmHg</li>
+            <li>Humidity: ${data.humidity} %</li>
+            <li>Cloudiness: ${data.clouds} %</li>
+          </ul>
+        </div>
   `;
 
   weatherBlockEl.insertAdjacentHTML('beforeend', markup);
@@ -71,9 +93,6 @@ function createMarkupWeather(data) {
 
 function formatUnixTime(time) {
   const date = new Date(time * 1000);
-  const timezoneOffset = date.getTimezoneOffset();
-  console.log(timezoneOffset);
-  date.setMinutes(date.getMinutes() - timezoneOffset);
 
   const hours = date.getHours().toString().padStart(2, '0');
   const minutes = date.getMinutes().toString().padStart(2, '0');
@@ -81,4 +100,11 @@ function formatUnixTime(time) {
   return `${hours}:${minutes}`;
 }
 
-// розібратись з правильним часовим поясом
+// const mapTest = document.querySelector('#map');
+// const width = mapTest.getAttribute('width') / 2;
+// const height = mapTest.getAttribute('height') / 2;
+
+// console.log(width, height);
+
+// mapTest.setAttribute('width', width);
+// mapTest.setAttribute('height', height);
