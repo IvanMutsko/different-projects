@@ -50,6 +50,8 @@ mapEl.forEach(state => {
 
       weatherBlockEl.textContent = '';
 
+      weatherBlockEl.classList.remove('visually-hidden');
+
       createMarkupWeather(weatherDataForMarkup);
     });
   });
@@ -58,19 +60,17 @@ mapEl.forEach(state => {
 function createMarkupWeather(data) {
   const markup = `
   <div class="weather-description">
-          <h2 class="descr-title">Description: ${data.description}</h2>
+          <h2 class="descr-title">${
+            data.description.charAt(0).toUpperCase() + data.description.slice(1)
+          }</h2>
           <img
             class="weather-img"
             src="https://openweathermap.org/img/wn/${data.icon}@2x.png"
           />
           <ul class="time-wrap weather-list">
-            <li>
-              Curent time: 00:00
-              <ul class="time-list">
                 <li>sunrise: ${data.sunrise}</li>
                 <li>sunset: ${data.sunset}</li>
               </ul>
-            </li>
           </ul>
         </div>
         <div class="wether-data-wrap">
@@ -99,12 +99,3 @@ function formatUnixTime(time) {
 
   return `${hours}:${minutes}`;
 }
-
-// const mapTest = document.querySelector('#map');
-// const width = mapTest.getAttribute('width') / 2;
-// const height = mapTest.getAttribute('height') / 2;
-
-// console.log(width, height);
-
-// mapTest.setAttribute('width', width);
-// mapTest.setAttribute('height', height);
