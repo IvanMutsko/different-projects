@@ -1,5 +1,5 @@
 :root {
-  --main-text-color: #000000;
+  --main-text-color: #00000097;
 }
 
 .visually-hidden {
@@ -9,7 +9,7 @@
   margin: -1px;
   border: 0;
   padding: 0;
-  
+
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
@@ -17,38 +17,79 @@
 }
 
 body {
-  background-image: url('https://wallpaper.dog/large/20571972.jpg');
-  background-size: cover;
-  backrgound-position: right 50% bottom 50%;
-
   color: var(--main-text-color);
 }
-.container {
-  padding: 30px;
+
+.header {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 43%,
+    rgba(9, 9, 121, 1) 77%,
+    rgb(1, 92, 110) 100%
+  );
+
+  padding: 20px 20px;
+
+  border-bottom: 2px solid rgba(7);
 }
 
-@media screen and (min-width: 1024px) {
-  .section {
-    display: flex;
-    gap: 40px;
+.footer {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgb(1, 92, 110) 0%,
+    rgba(9, 9, 121, 1) 40%,
+    rgba(2, 0, 36, 1) 100%
+  );
 
-    align-items: center;
-  }
+  height: 60px;
+
+  border-bottom: 2px solid rgba(7);
+}
+
+.home-link {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.header-text {
+  font-size: 20px;
+  color: #fff;
+  margin: 0;
+  margin-left: 100px;
+}
+
+.container {
+  height: 100%;
+
+  padding: 20px;
+
+  background-color: #686868;
+
+  background-image: url('https://wallpaper.dog/large/20571972.jpg');
+  background-size: cover;
 }
 
 .title {
   font-family: 'Alkatra', cursive;
+
+  margin-left: 30px;
 }
 
-#map {
-  /* transform: scale(0.5); */
+.weather-state {
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: underline;
 }
 
 .weather-wrap {
-  display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
-
   font-family: 'Roboto Slab', serif;
   letter-spacing: 1px;
 
@@ -58,18 +99,7 @@ body {
   padding: 20px;
 }
 
-.wether-data-wrap {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: space-between; */
-
-  gap: 20px;
-}
-
 .weather-list {
-  display: inline-block;
-
-  margin: 0;
   padding: 15px 20px;
   line-height: 1.5;
 
@@ -79,19 +109,9 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.weather-description {
-  margin: 0 20px 0 0;
-  padding: 15px 20px;
-
-  max-width: 220px;
-
-  background-color: rgba(255, 215, 0, 0.3);
-  border-radius: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
 .descr-title {
-  margin: 0;
+  margin: 0 auto 0 auto;
+  font-size: 20px;
 }
 
 .weather-img {
@@ -105,6 +125,103 @@ body {
   list-style: none;
 }
 
-.time-wrap {
-  display: block;
+@media screen and (min-width: 320px) {
+  .section {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map {
+    transform: scale(0.5);
+  }
+
+  .weather-wrap {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    align-content: center;
+
+    width: 240px;
+
+    margin-bottom: 20px;
+  }
+
+  .weather-description {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 15px 20px 0 20px;
+
+    background-color: transparent;
+    border: none;
+  }
+
+  .weather-list {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map {
+    transform: scale(1);
+  }
+
+  .weather-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 500px;
+  }
+
+  .weather-list {
+    margin: 0;
+  }
+
+  .weather-description {
+    max-width: 220px;
+    padding-bottom: 15px;
+
+    background-color: rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .wether-data-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .weather-wrap {
+  }
 }

@@ -5,6 +5,8 @@ const mapEl = document.querySelectorAll('#map path');
 const stateNameEl = document.querySelector('.state');
 const weatherBlockEl = document.querySelector('#weather-block');
 
+let currentState = '';
+
 mapEl.forEach(state => {
   state.style.fill = '#ffd700';
   state.style.fillOpacity = '0.3';
@@ -15,6 +17,7 @@ mapEl.forEach(state => {
     state.style.fill = '#0057b8';
 
     const stateNameText = state.getAttribute('title');
+    currentState = stateNameText;
     stateNameEl.textContent = `, ${stateNameText}`;
   });
 
@@ -33,19 +36,19 @@ mapEl.forEach(state => {
       const { main, weather, wind, clouds, sys } = weatherData;
 
       const weatherDataForMarkup = {
-        temp: main.temp, //
-        feelsLike: main.feels_like, //
-        pressure: (main.pressure * 0.750062).toFixed(0), //
-        humidity: main.humidity, //
-        windSpeed: wind.speed, //
-        windGust: wind.gust, //
-        clouds: clouds.all, //
-        sunrise: formatUnixTime(sys.sunrise), //
-        sunset: formatUnixTime(sys.sunset), //
-        description: weather[0].description, //
+        temp: Math.round(main.temp),
+        feelsLike: Math.round(main.feels_like),
+        pressure: (main.pressure * 0.750062).toFixed(0),
+        humidity: main.humidity,
+        windSpeed: Math.round(wind.speed),
+        windGust: Math.round(wind.gust),
+        clouds: clouds.all,
+        sunrise: formatUnixTime(sys.sunrise),
+        sunset: formatUnixTime(sys.sunset),
+        description: weather[0].description,
         icon: weather[0].icon,
         main: weather[0].main,
-        id: weather[0].id, //
+        id: weather[0].id,
       };
 
       weatherBlockEl.textContent = '';
@@ -60,6 +63,7 @@ mapEl.forEach(state => {
 function createMarkupWeather(data) {
   const markup = `
   <div class="weather-description">
+          <h2 class="weather-state">${currentState}</h2>
           <h2 class="descr-title">${
             data.description.charAt(0).toUpperCase() + data.description.slice(1)
           }</h2>

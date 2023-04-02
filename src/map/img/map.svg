@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Map</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Edu+NSW+ACT+Foundation&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <header class="header">
-      <a class="home-link" href="../index.html">Go home</a>
-      <p class="header-text">Choose a region...</p>
-    </header>
-
-    <div class="container">
-      <h1 class="title">Ukraine<span class="state"></span></h1>
-      <section class="section">
-        <div class="map">
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <svg
+ <svg
             xmlns:mapsvg="http://mapsvg.com"
             xmlns:dc="http://purl.org/dc/elements/1.1/"
             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -204,11 +172,3 @@
               data-geocode="50.261720, 28.668909"
             />
           </svg>
-        </div>
-        <div class="weather-wrap visually-hidden" id="weather-block"></div>
-      </section>
-    </div>
-    <footer class="footer"></footer>
-    <script src="./js/index.js" type="module"></script>
-  </body>
-</html>
