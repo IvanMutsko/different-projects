@@ -1,9 +1,14 @@
 import 'normalize.css';
 import { fetchWeather } from './fetchweather';
+import background_day from '../img/day.jpeg';
+import background_night from '../img/night1.webp';
 
 const mapEl = document.querySelectorAll('#map path');
 const stateNameEl = document.querySelector('.state');
 const weatherBlockEl = document.querySelector('#weather-block');
+const containerEl = document.querySelector('.container');
+const themeCheckboxEl = document.querySelector('.theme-check');
+const titleEl = document.querySelector('.title');
 
 let currentState = '';
 
@@ -102,4 +107,38 @@ function formatUnixTime(time) {
   const minutes = date.getMinutes().toString().padStart(2, '0');
 
   return `${hours}:${minutes}`;
+}
+
+setStartTheme();
+
+function setStartTheme() {
+  // const startTheme = new Date().getHours();
+  const startTheme = 2;
+  if (startTheme > 7 && startTheme < 21) {
+    console.log('dayyyy');
+    changeTheme(false);
+    return;
+  }
+  console.log('night');
+  themeCheckboxEl.setAttribute('checked', 'checked');
+  changeTheme(true);
+}
+
+themeCheckboxEl.addEventListener('click', () => {
+  const themeMode = themeCheckboxEl.checked;
+  changeTheme(themeMode);
+});
+
+function changeTheme(mode) {
+  console.log(mode);
+  if (mode) {
+    containerEl.style.backgroundImage = `url(${background_night})`;
+    titleEl.classList.remove('title-light');
+    titleEl.classList.add('title-dark');
+    return;
+  }
+
+  titleEl.classList.remove('title-dark');
+  titleEl.classList.add('title-light');
+  containerEl.style.backgroundImage = `url(${background_day})`;
 }

@@ -29,9 +29,33 @@ body {
     rgb(1, 92, 110) 100%
   );
 
-  padding: 20px 20px;
+  padding: 20px 40px;
 
   border-bottom: 2px solid rgba(7);
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-link {
+  display: inline-block;
+  padding: 5px 10px;
+
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.header-text {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
 }
 
 .footer {
@@ -43,44 +67,33 @@ body {
     rgba(2, 0, 36, 1) 100%
   );
 
-  height: 60px;
+  height: 80px;
 
   border-bottom: 2px solid rgba(7);
 }
 
-.home-link {
-  display: inline-block;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-
-  text-decoration: none;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 5px;
-}
-
-.header-text {
-  font-size: 20px;
-  color: #fff;
-  margin: 0;
-  margin-left: 100px;
-}
-
 .container {
-  height: 100%;
-
   padding: 20px;
 
   background-color: #686868;
 
-  background-image: url('https://wallpaper.dog/large/20571972.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .title {
   font-family: 'Alkatra', cursive;
 
   margin-left: 30px;
+}
+
+.title-light {
+  color: #00000097;
+}
+
+.title-dark {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .weather-state {
@@ -223,5 +236,128 @@ body {
     flex-wrap: nowrap;
   }
   .weather-wrap {
+  }
+}
+/* 
+.wrapper{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	width: 400px;
+	margin: 50vh auto 0;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+} */
+.switch_box {
+  /* display: -webkit-box;
+  display: -ms-flexbox; */
+  /* display: flex; */
+  /* max-width: 200px;
+	min-width: 200px; */
+  /* height: 200px; */
+  /* -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; */
+}
+
+.toggle_switch {
+  width: 100px;
+  height: 45px;
+  position: relative;
+}
+input[type='checkbox'].switch_3 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  outline: 0;
+  z-index: 1;
+}
+svg.checkbox .outer-ring {
+  stroke-dasharray: 375;
+  stroke-dashoffset: 375;
+  -webkit-animation: resetRing 0.35s ease-in-out forwards;
+  animation: resetRing 0.35s ease-in-out forwards;
+}
+input[type='checkbox'].switch_3:checked + svg.checkbox .outer-ring {
+  -webkit-animation: animateRing 0.35s ease-in-out forwards;
+  animation: animateRing 0.35s ease-in-out forwards;
+}
+input[type='checkbox'].switch_3:checked + svg.checkbox .is_checked {
+  opacity: 1;
+  -webkit-transform: translateX(0) rotate(0deg);
+  transform: translateX(0) rotate(0deg);
+}
+input[type='checkbox'].switch_3:checked + svg.checkbox .is_unchecked {
+  opacity: 0;
+  -webkit-transform: translateX(-200%) rotate(180deg);
+  transform: translateX(-200%) rotate(180deg);
+}
+svg.checkbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+svg.checkbox .is_checked {
+  opacity: 0;
+  fill: yellow;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translateX(200%) rotate(45deg);
+  transform: translateX(200%) rotate(45deg);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+svg.checkbox .is_unchecked {
+  opacity: 1;
+  fill: #fff;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-transform: translateX(0) rotate(0deg);
+  transform: translateX(0) rotate(0deg);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+@-webkit-keyframes animateRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #b0aa28;
+  }
+}
+@keyframes animateRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #b0aa28;
+  }
+}
+@-webkit-keyframes resetRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #233043;
+  }
+}
+@keyframes resetRing {
+  to {
+    stroke-dashoffset: 0;
+    stroke: #233043;
   }
 }
